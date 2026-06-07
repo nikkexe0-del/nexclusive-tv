@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-primary:       #533afd;
+    --color-primary-press: #2e2b8c;
+    --color-brand-dark:    #1c1e54;
+    --color-ink:           #0d253d;
+    --color-ink-mute:      #64748d;
+    --color-canvas:        #ffffff;
+    --color-canvas-soft:   #f6f9fc;
+    --color-canvas-cream:  #f5e9d4;
+    --color-hairline:      #e3e8ee;
+    --color-ruby:          #ea2261;
+    --color-magenta:       #f96bee;
+    --color-lemon:         #9b6829;
+  }
+
+  html {
+    font-feature-settings: "ss01";
+  }
+
+  body {
+    font-family: 'Inter', 'SF Pro Display', system-ui, -apple-system, sans-serif;
+    font-weight: 300;
+    background-color: var(--color-canvas-soft);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01";
+  }
+
+  .tnum {
+    font-feature-settings: "tnum";
+    letter-spacing: -0.03em;
+  }
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+  .display-xxl {
+    font-size: 56px;
+    font-weight: 300;
+    line-height: 1.03;
+    letter-spacing: -1.4px;
+    font-feature-settings: "ss01";
+  }
+  .display-xl {
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 1.15;
+    letter-spacing: -0.96px;
+    font-feature-settings: "ss01";
+  }
+  .display-lg {
+    font-size: 32px;
+    font-weight: 300;
+    line-height: 1.1;
+    letter-spacing: -0.64px;
+    font-feature-settings: "ss01";
+  }
+  .display-md {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 1.12;
+    letter-spacing: -0.26px;
+    font-feature-settings: "ss01";
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-primary);
+    color: #fff;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: background 0.15s ease;
+    font-feature-settings: "ss01";
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .btn-primary:active { background: var(--color-primary-press); }
+  .btn-primary:hover  { background: color-mix(in srgb, var(--color-primary) 88%, #fff); }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: #fff;
+    color: var(--color-primary);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1;
+    letter-spacing: 0;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    border: 1px solid var(--color-primary);
+    transition: all 0.15s ease;
+    font-feature-settings: "ss01";
+    cursor: pointer;
+  }
+  .btn-secondary:hover { background: color-mix(in srgb, var(--color-primary) 6%, #fff); }
+
+  .btn-on-dark {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: var(--color-brand-dark);
+    color: #fff;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1;
+    padding: 8px 16px;
+    border-radius: 9999px;
+    transition: opacity 0.15s ease;
+    cursor: pointer;
+  }
+  .btn-on-dark:hover { opacity: 0.85; }
+
+  .pill-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: #b9b9f9;
+    color: #4434d4;
+    font-size: 10px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.1px;
+    padding: 4px 8px;
+    border-radius: 9999px;
+    font-feature-settings: "ss01";
+  }
+
+  .card-light {
+    background: var(--color-canvas);
+    border: 1px solid var(--color-hairline);
+    border-radius: 12px;
+    box-shadow: rgba(0,55,112,0.06) 0 1px 3px;
+  }
+
+  .card-dark {
+    background: var(--color-brand-dark);
+    border-radius: 12px;
+    box-shadow: rgba(0,55,112,0.12) 0 8px 24px, rgba(0,55,112,0.06) 0 2px 6px;
+  }
+
+  .mesh-backdrop {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+}
+
+/* Shaka Player UI overrides */
+.shaka-video-container {
+  width: 100% !important;
+  height: 100% !important;
+}
+.shaka-controls-button-panel {
+  background: linear-gradient(to top, rgba(28,30,84,0.9), transparent) !important;
+}
